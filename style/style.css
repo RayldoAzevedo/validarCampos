@@ -1,0 +1,114 @@
+/* CRIADO POR RAYLDO AZEVEDO */
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-image: url(../imagens/bg6.jpg);
+    /* background-image: url(../imagens/bg4.png); */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+}
+select, option{
+    cursor: pointer;
+}
+
+.radio{
+    cursor: pointer;
+    border:solid 0.5px rgb(137, 120, 153);
+    appearance: none;
+    background:white;
+    /* border-radius:50px; */
+    outline: none;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio:before{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: black;
+    content: '';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    opacity: 0;
+    transition: all 500ms ease-in-out;
+}
+
+.radio:checked::before{
+    opacity: 1;
+}
+
+.radio:focus{
+    box-shadow: 0 0 5px red;
+}
+
+label{
+    display: flex;
+    font-weight: bold;
+    /* font-family: 'Poiret One', cursive; */
+    font-family: 'Hurricane', cursive;
+    color: #000000;
+    font-size: 18px;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    font-style: italic;
+    background-color: lightgray;
+    width:25%;
+    color: red;
+}
+
+.imagem{
+    width: 250px;
+    height: 130px;
+    padding: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    border: solid 1px #E6E6FA;
+}
+
+.tamanhoBox{
+    width:500px;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center; /*ajusta de cima para baixo*/
+    justify-content: center; /*ajusta de esq para direita*/
+    font-size:20px;
+    margin-top:30px;
+    font-family: 'Hurricane', cursive;
+}
+.btn-validar{
+    width: 150px;
+    height: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.submit{
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+.submit:hover{
+    text-align: center;
+    width: 170px;
+    height: 33px;
+    border: solid 2px;
+    border-color: red;
+    margin-bottom: 20px;
+}

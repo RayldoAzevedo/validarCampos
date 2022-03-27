@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+	<head>
+		<!-- CRIADO POR RAYLDO AZEVEDO -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- FONTES GOOGLE UTILIZADAS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Poiret+One&display=swap" rel="stylesheet">
+		<!-- BOOTSTRAP -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<!-- JAVASCRIPT -->
+		<script languange="JavaScript" src="JavaScript/validarCampos.js"></script>
+
+		<title>Cadastro-Curso</title>	
+	</head>
+
+	<body >
+		<div class="container">
+			<!-- LOGO DA PÁGINA -->
+			<div class="container d-flex justify-content-center m-0 p-0 border border-danger rounded-circle bg-warning">
+				<div class="row grid rounded-circle">
+					<div class="col col-sm-12 ">
+						<img class="rounded-start rounded-circle imagem" src="imagens/curso.png"/>
+					</div>				
+				</div>
+			</div>
+		</div>
+			<!-- TITULO DA PÁGINA + INFOMAÇÕES -->
+			<div class="row">
+				<h1 class="bg-danger border border-danger rounded-circle text-center tamanhoBox">
+					<b>Escolha o seu curso.</b>
+				</h1>			
+				
+			</div>
+		
+
+		<!-- CORPO DO FORMULARIO -->
+		<div class="container pt-3 mb-5 ">
+
+			<div class="card bg-info">
+				<p class=" ms-4 mt-2"> <b>Campos com * são obrigatórios</b></p>
+
+				<!-- FORMULÁRIO frmCurso -->
+				<form class="row p-2 m-2" action="#" method="post" name="formulario" id="formulario">
+				<!-- PRIMEIRA LINHA: CAMPO ID E MATRICULA-->
+					<div class="form-floating col col-lg-2">
+						<input type="hidden" 
+						class="form-control" 
+						name="id" 
+						id="id"
+						value="id">						
+					</div>
+
+					<div class="row m-1">
+						<div class="form-floating col col-lg-5 ">
+							<input type="text" 
+							class="form-control"
+							maxlength="18" 
+							minlength="18" 
+							OnKeyPress="formatar('####.#.####.####-#', this)" 
+							name="matricula" 
+							id="matricula"
+							placeholder="Matrícula"
+							value="">
+
+							<label class="ms-2" for="matricula">Matrícula <b class="text-danger">*</b></label>
+						</div>
+					</div>
+
+				<!-- SEGUNDA LINHA  \\ CAMPOS NOME E SEXO-->
+					<div class="row m-1">
+						<div class="form-floating col col-lg-9">
+							<input type="text" 
+							class="form-control" 
+							name="nome" 
+							id="nome" 
+							placeholder="Nome" 
+							value="">
+
+							<label class="ms-2" for="nome">Nome <b class="text-danger">*</b></label>
+						</div>
+
+						<div class="form-floating col col-lg-3">
+							<select class="form-select" 
+							name="sexo" 
+							id="sexo" 
+							value="">
+								<option value="">Selecione o Sexo</option>
+								<option value="m">Masculino</option>
+								<option value="f">Feminino</option>
+							
+							</select>
+
+							<label class="ms-2" for="sexo">Sexo <b class="text-danger">*</b></label>
+						</div>
+					</div>
+
+				<!-- TERCEIRA LINHA CAMPOS: DATA DE NASCIMENTO, CURSOS E NÃO CURSOS-->
+					<div class="row m-1">
+						
+						<div class="form-floating col col-lg-4">
+							<input type="text" 
+							class="form-control" 
+							maxlength="10" 
+							minlength="10" 
+							OnKeyPress="formatar('##/##/####', this)"
+							name="dataNascimento" 
+							id="dataNascimento" 
+							placeholder="Data de Nascimento" 
+							value="">
+
+							<label class="ms-2" for="dataNascimento">Data de Nascimento <b class="text-danger">*</b></label>
+						</div>
+
+						<div class="form-floating col col-lg-4">
+							<select class="form-select" 
+							name="cursos" 
+							id="cursos" 
+							placeholder="Cursos"
+							value="" >
+								<option value="">Selecione um Curso</option>
+								<option value="csc">Ciencia da Computação</option>
+								<option value="egc">Engenharia da Computação</option>
+								<option value="ads">Análise e Desenvolvimento de Sistemas</option>							
+							</select>
+
+							<label class="ms-2" for="cursos">Cursos<b class="text-danger ms-2">*</b></label>
+						</div>
+
+						<div class="form-floating col col-lg-4">
+							<select class="form-select" 
+							name="cursos" 
+							id="naoCursaria" 
+							placeholder="Não Cursaria"
+							value="" >
+								<option value="">Selecione um Curso</option>
+								<option value="csc">Ciencia da Computação</option>
+								<option value="egc">Engenharia da Computação</option>
+								<option value="ads">Análise e Desenvolvimento de Sistemas</option>
+								<option value="let">Letras</option>
+								<option value="fis">Física</option>
+								<option value="his">História</option>							
+							</select>
+
+							<label class="ms-2" for="naoCursaria">Não Cursaria</label>
+						</div>
+					</div>
+				<!-- QUARTA LINHA - CAMPOS: E-MAIL, NOTIFICAÇÕES-->
+					<div class="row m-1">
+						<div class="col col-lg-8 form-floating">
+							<input type="email" 
+							class="form-control"
+							name="email"
+							id="email"
+							placeholder="e-mail"
+							value="">
+
+							<label for="email" class="ms-2">e-mail <b class="text-danger">*</b></label>
+						</div>					
+					
+						<div class="col col-lg-4">
+							<div class="row">
+								<label class="#" id="lblNoticar">Deseja receber notificações?</label>
+								<div class="col">
+									<input type="radio" class="radio" name="notificar" value="s"> Sim <br>
+								</div>
+								<div class="col">
+									<input type="radio" class="radio" name="notificar" value="n"> Não <br>
+								</div>							
+							</div>						
+						</div>
+
+					</div>
+
+				<!--  QUINTA LINHA - CAMPO SENHA-->
+					<div class="row m-1 d-flex justify-content-center">
+						<div class="col col-lg-3 form-floating">
+							<input type="password" 
+							class="form-control"
+							maxlength="8"
+							name="senha" 
+							id="senha"
+							placeholder="senha"
+							value="">
+
+							<label class="ms-2" for="senha">Senha<b class="text-danger">*</b></label>
+						</div>
+					</div>
+
+				<!--  SEXTA LINHA - CAMPO CONFIRMAR SENHA-->
+					<div class="row m-1 d-flex justify-content-center">
+						<div class="col col-lg-3 form-floating">
+							<input type="password"
+							class="form-control"
+							maxlength="8"
+							name="confirmarSenha"
+							id="confirmarSenha"
+							placeholder="Confirmar Senha"
+							value="">
+
+							<label class="ms-2" for="confirmarSenha">Confirmar Senha <b class="text-danger">*</b></label>
+						</div>
+					</div>
+
+				<!--SETIMA LINHA CAMPO MOTIVAÇÃO DO CURSO  -->
+					<div class="row m-1 d-flex justify-content-center ">
+						
+						<div class="col ">				
+							<label for="motivacao" name="lblmotivacao" class="ms-2 ">Motivação do Curso: </label>
+							<textarea  
+							class=""
+							rows="4"
+							cols="50"
+							maxlength="500"
+							name="motivacao"
+							id="motivacao"							
+							placeholder="Motivação:"
+							value=""
+							>							
+							</textarea>
+							
+						</div>
+					</div>
+
+					<!-- CAMPO DO BOTÃO DE VALIDAÇÃO  -->
+					<div class="row m-1 mb-3">
+						<div class="col col-lg-2">
+							<input type="button" 
+							class="btn btn-success btn-validar"
+							id="btnValidar" 
+							name="btnValidar"
+							onclick="validar()" 
+							value="Validar Campos">
+						</div>
+					<!-- CAMPOS DO BOTÃO DE ENVIO  -->
+						<div class="col col-lg-2">
+							<input type="submit"
+							class="btn btn-success submit"
+							id="btnSubmit"
+							name="btnSubmit"
+							value="Enviar">
+						</div>
+					</div>
+
+					<!-- FIM DO FORM -->
+				</form>
+				<!-- FIM DO CARD -->
+			</div>
+			<!-- FIM DO CONTAINER -->
+		</div>
+
+	</body>
+
+</html>
